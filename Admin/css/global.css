@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(_classes.css);
+*,
+::before,
+::after {  
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-4);
+}
+:root{
+--color-1: #f2f1eb;
+--color-2: #B2A59B;
+--color-3: #B99470;
+--color-4: #161A30;
+--black: #000000;
+--white: #ffffff;
+--03rem: clamp(2px,.3vw,.3rem);
+--05rem: clamp(3px,.5vw,.5rem);
+--1rem: clamp(8px,1vw,1rem);
+--15rem: clamp(13px,1.5vw,1.5rem);
+--2rem: clamp(18px,2vw,2rem);
+--25rem: clamp(13px,2.5vw,2.5rem);
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+}
+input,
+select,
+textarea{
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+header{
+    background: var(--white);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--15rem);
+    position: sticky;
+    top: 0;
+
+    & .logo{
+        width: 300px;
+        display: flex;
+        font-size: var(--15rem);
+        align-items: center;
+        gap: var(--1rem);
+        cursor: pointer;
+        & span{
+            padding: var(--05rem);
+            border-radius: 5rem;
+            &:hover{
+                background: var(--color-1);
+            }
+        }
+    }
+    & ul{
+        display: flex;
+        gap: var(--2rem);
+        flex-grow: 1;
+        align-items: center;
+        & > :first-child{
+            flex-grow: 1;
+            font-size: var(--15rem);
+            & form{
+                display: flex;
+                align-items: center;
+                height: 45px;
+                width: 50%;
+                padding: 0 var(--1rem);
+                gap: var(--1rem);
+                background: var(--color-1);
+                border-radius: var(--05rem);
+                & input{
+                    flex-grow: 1;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    font-size: var(--1rem);
+                }
+                & .nav_search_times{
+                    visibility: hidden;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                & button{
+                    background: transparent;
+                    border: none ;
+                    font-size: var(--15rem);
+                    visibility: hidden;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+        & .nav_setting{
+            width:var(--25rem);
+            height:var(--25rem);
+            border-radius: 5rem;
+            cursor: pointer;
+            &:not(.nav_user){
+                background: var(--color-1);
+                font-size: var(--15rem);
+                transition: .5s;
+                &:hover{
+                    background: var(--color-2);
+                }
+            }
+        }
+        & .nav_user  img{
+            border-radius: 5rem;
+        }
+    }
+}
+
+.main_container{
+    display: flex;
+}
+.main_container .side_bar{
+    min-width: 300px;
+    padding: 1rem;
+    background: var(--white);
+    position: sticky;
+    height: calc(100vh - 60px);
+    top: 60px;
+
+    & .side_bar_shop_profile{
+        display: flex;
+        align-items: center;
+        /* flex-direction: column; */
+        gap: var(--1rem);
+        background: var(--color-1);
+        padding: var(--03rem)  var(--1rem);
+        border-radius: var(--1rem);
+        & > :first-child{
+            width: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border:  2px solid var(--color-3);
+            border-radius: 5rem;
+            overflow: hidden;
+        }
+        & :last-child{
+           flex-grow: 1;
+          font-size: var(--1rem);
+        }
+    }
+& .side_bar_navigation{
+    display: flex;
+    flex-direction: column;
+    gap: var(--1rem);
+    margin-top: 5rem;
+    & a{
+        text-decoration: none;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        gap: var(--1rem);
+        padding: 0 var(--1rem);
+        border-radius: var(--05rem);
+        font-size: calc(var(--1rem) + .2rem);
+        &:hover{
+            & *{
+                color: var(--color-3) !important;
+            }
+        }
+        &.active{
+            /* background: var(--color-2/); */
+            box-shadow: 0 0 var(--03rem) var(--color-3);
+            & *{
+                color: var(--color-3) !important;
+            }
+        }
+    }
+    }
+}
+
+
+.main_container .content_area{
+    background: var(--color-1);
+    flex-grow: 1;
+    padding: var(--1rem);
+
+    & .overview_container{
+        display: flex;
+        /* width: 90%; */
+        height: 250px;
+        border-radius: var(--05rem);
+        background: var(--white);
+    }
+    & main{
+        margin: var(--1rem) 0;
+        display: flex;
+        gap: var(--1rem);
+    }
+}
+main .table{
+    background: var(--white);
+    padding: var(--1rem);
+    width: 70%;
+    border-radius: var(--05rem);
+    & h1{
+        float: left;
+    }
+    & form{
+        float: right;
+        display: flex;
+        align-items: center;
+        gap: var(--05rem);
+        border: 2px solid var(--color-1);
+        border-radius: var(--05rem);
+        padding: var(--05rem);
+        font-size: var(--15rem);
+    }
+    & table {
+        clear: both;
+        padding-top: var(--1rem);
+
+        & thead {
+            background: var(--color-1);
+            & th{
+                padding: var(--1rem);
+                font-size: .8rem;
+            }
+        }
+        & tbody{
+            & td{
+                padding: var(--1rem);
+                    white-space: nowrap;
+                &#title{
+                    display: -webkit-box;
+                    white-space: normal;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}

@@ -70,6 +70,7 @@ create table products(
     Product_Quantity int not null ,
     Max_Orders int not null ,
     Stock_Status varchar(100) not null default 'In Stock',
+    Total_Sold varchar(100) not null ,
     SKU varchar(100) not null,
     Category_Id int,
     Shop_Id int,

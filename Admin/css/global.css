@@ -17,6 +17,7 @@
 --color-4: #161A30;
 --black: #000000;
 --white: #ffffff;
+--black-shadow: rgba(0, 0, 0, 0.2);
 --03rem: clamp(2px,.3vw,.3rem);
 --05rem: clamp(3px,.5vw,.5rem);
 --1rem: clamp(8px,1vw,1rem);
@@ -30,13 +31,15 @@ img{
     object-fit: cover;
     user-select: none;
 }
-input,
+input[type="text"],
 select,
-textarea{
+textarea,
+button{
     -webkit-appearance: none;
     appearance: none;
     outline: none;
     border: none;
+    background: transparent;
 }
 header{
     background: var(--white);
@@ -44,8 +47,10 @@ header{
     display: flex;
     align-items: center;
     padding: 0 var(--15rem);
+    z-index: 2;
     position: sticky;
     top: 0;
+    box-shadow: 0 0 var(--1rem) var(--black-shadow);
 
     & .logo{
         width: 300px;
@@ -131,6 +136,7 @@ header{
     position: sticky;
     height: calc(100vh - 60px);
     top: 60px;
+    z-index: 2;
 
     & .side_bar_shop_profile{
         display: flex;
@@ -151,7 +157,7 @@ header{
         }
         & :last-child{
            flex-grow: 1;
-          font-size: var(--1rem);
+          font-size: calc(var(--1rem) + .2rem);
         }
     }
 & .side_bar_navigation{
@@ -167,7 +173,7 @@ header{
         gap: var(--1rem);
         padding: 0 var(--1rem);
         border-radius: var(--05rem);
-        font-size: calc(var(--1rem) + .2rem);
+        font-size: var(--1rem);
         &:hover{
             & *{
                 color: var(--color-3) !important;
@@ -201,9 +207,48 @@ header{
         margin: var(--1rem) 0;
         display: flex;
         gap: var(--1rem);
+        & .latest_products_container{
+            width: 30%;
+            background: var(--white);
+            border-radius: var(--05rem);
+            padding: var(--1rem);
+            & h1{
+                text-align: center;
+                margin-bottom: var(--1rem);
+            }
+            & .container{
+
+                & .child{
+                    padding: var(--05rem);
+                    border-radius: var(--05rem);
+                    display: flex;
+                    margin: var(--05rem) 0;
+                    gap: var(--05rem);
+                    box-shadow: 0 0 1vw var(--black-shadow);
+                    & div:first-child{
+                        /*width: 40%;*/
+                        flex-basis: 30%;
+                        aspect-ratio: 1/1;
+                        border-radius: var(--05rem);
+                        overflow: hidden;
+                    }
+                    & div:last-child{
+                        width: 60%;
+                        & h5{
+                            display: -webkit-box;
+                            white-space: normal;
+                            -webkit-line-clamp: 3;
+                            overflow: hidden;
+                            -webkit-box-orient: vertical;
+                            margin-bottom: var(--1rem);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-main .table{
+main .table_container{
     background: var(--white);
     padding: var(--1rem);
     width: 70%;
@@ -221,29 +266,74 @@ main .table{
         padding: var(--05rem);
         font-size: var(--15rem);
     }
-    & table {
-        clear: both;
-        padding-top: var(--1rem);
-
-        & thead {
-            background: var(--color-1);
-            & th{
-                padding: var(--1rem);
-                font-size: .8rem;
-            }
+}
+.table{
+    clear: both;
+    padding-top: var(--1rem);
+    & :is(.thead,.tbody) .tr{
+        display: grid;
+        margin: var(--05rem) 0;
+        border-radius: var(--05rem);
+        place-items: center;
+        gap: var(--05rem);
+        grid-template-columns: 1fr 3fr repeat(5,1fr);
+        background: var(--color-1);
+        padding: var(--1rem) var(--05rem);
+        & .th{
+            font-weight: bold;
         }
-        & tbody{
-            & td{
-                padding: var(--1rem);
-                    white-space: nowrap;
-                &#title{
-                    display: -webkit-box;
-                    white-space: normal;
-                    -webkit-line-clamp: 1;
-                    overflow: hidden;
-                    -webkit-box-orient: vertical;
+        & input[type="checkbox"]{
+            accent-color: var(--black);
+        }
+    }
+
+    & .tbody  .tr{
+        background: transparent;
+        box-shadow: 0 0 1vw var(--black-shadow);
+    &  .td{
+        white-space: nowrap;
+        &#title{
+            display: -webkit-box;
+            white-space: normal;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+        }
+
+        &.action{
+            font-size: var(--15rem);
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            & ul{
+                position: absolute;
+                padding: var(--05rem);
+                box-shadow: 0 0 1vw var(--black-shadow);
+                background: var(--white);
+                border-radius: var(--05rem);
+                display: none;
+                top: 120%;
+                z-index: 2;
+                &.active{
+                display: block;
+                }
+                & li{
+                    font-size: var(--1rem);
+                    display: flex;
+                    align-items: center;
+                    margin: var(--05rem) 0;
+                    gap: var(--05rem);
                 }
             }
         }
+        & img{
+            width: var(--25rem);
+            /*height: var(--25rem);*/
+            border-radius: var(--03rem);
+        }
     }
+    }
+
 }

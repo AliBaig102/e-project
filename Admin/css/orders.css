@@ -1,0 +1,24 @@
+@import "products.css";
+
+.table :is( .thead,.tbody) .tr{
+    grid-template-columns: 2fr 2fr repeat(6,1fr);
+    & .td{
+        &.details{
+            display: flex;
+            align-items: center;
+            gap: var(--05rem);
+            & img{
+                width: var(--25rem);
+                aspect-ratio: 1/1;
+            }
+            & #title{
+                display: -webkit-box;
+                white-space: normal;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+            }
+        }
+
+    }
+}

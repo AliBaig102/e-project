@@ -8,6 +8,7 @@ use  e_commerce;
 create table categories(
    Category_Id int primary key auto_increment,
    Category_Name varchar(100) not null,
+   Number_of_Products int not null default 0,
    created_at datetime default current_timestamp,
    updated_at datetime default current_timestamp on update current_timestamp
 );

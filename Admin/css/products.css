@@ -1,0 +1,143 @@
+/*@import "global.css";*/
+.content_area  .products_container{
+    background: var(--white);
+    padding: var(--1rem);
+    border-radius: var(--05rem);
+
+    & .head_container{
+        display: flex;
+        align-items: center;
+        margin: var(--1rem) 0;
+        background: var(--color-1);
+        padding: var(--1rem);
+        gap: var(--2rem);
+        border-radius: var(--05rem);
+        position: relative;
+        & > div{
+            display: flex;
+            gap: var(--1rem);
+            font-size: var(--15rem);
+            cursor: pointer;
+            & iconify-icon{
+                padding: var(--05rem);
+                border-radius: 5rem;
+                &:hover{
+                background: var(--white);
+                }
+                &.active{
+                    background: var(--white);
+                    /*color: var(--white);*/
+                }
+            }
+        }
+        & >form{
+            display: flex;
+            align-items: center;
+            flex-basis: 500px;
+            gap: var(--05rem);
+            border: 2px solid var(--white);
+            border-radius: var(--05rem);
+            padding: var(--05rem);
+            font-size: var(--15rem);
+            & input{
+                flex-grow: 1;
+            }
+        }
+        & > select{
+            border-radius: var(--05rem);
+            border: 2px solid var(--white);
+            background: var(--white);
+            padding: var(--05rem) var(--1rem);
+        }
+        & > button{
+            padding: var(--05rem) var(--1rem);
+            border-radius: var(--03rem);
+            position: absolute;
+            right:  var(--1rem);
+            background: var(--white);
+            cursor: pointer;
+            font-size: var(--1rem);
+            display: flex;
+            align-items: center;
+            gap: var(--05rem);
+            &:hover{
+                box-shadow: 0 0 var(--1rem) var(--black-shadow);
+            }
+        }
+    }
+}
+.table :is(.thead,.tbody) .tr{
+    grid-template-columns: .2fr 1fr 3fr repeat(7,1fr);
+    & .td img{
+        width: calc(var(--25rem) + var(--15rem));
+        aspect-ratio: 1/1;
+    }
+}
+.table.active{
+    .thead{
+        display: none;
+    }
+.tbody{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: var(--1rem);
+
+    & .tr{
+        grid-template-columns: 1fr;
+        place-items: start;
+        position: relative;
+
+        & >.td:first-child{
+            display: none;
+        }
+        & .td img{
+            width: 100%;
+        }
+        & .td#title{
+            -webkit-line-clamp: 3;
+        }
+        & .td:nth-child(5){
+            position: absolute;
+            top: 75%;
+            right: 10%;
+            
+        }
+        & .td:nth-child(6){
+            display: none;
+        }
+        & .td:nth-child(8){
+            position: absolute;
+            top: 81%;
+            right: 10%;
+        }
+        & .td:nth-child(9){
+            display: none;
+        }
+        & .td:last-child{
+            & >iconify-icon{
+                display: none;
+            }
+            & ul{
+                position: static;
+                display: flex;
+                gap: var(--1rem);
+                & li{
+                    font-size:.9rem;
+                    &:first-child {
+                        color: blue;
+                        & *{
+                            color: blue;
+                        }
+                    }
+                    &:last-child {
+                        color: red;
+                        & *{
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}

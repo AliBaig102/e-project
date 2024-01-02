@@ -1,0 +1,14 @@
+@import "products.css";
+.table :is( .thead,.tbody) .tr {
+    grid-template-columns: .5fr repeat(3,4fr);
+    & .td{
+        &:last-child{
+            box-shadow: 0 0 var(--1rem) var(--black-shadow);
+            display: flex;
+            width: fit-content;
+            padding: var(--05rem) var(--1rem);
+            border-radius: var(--05rem);
+            gap: var(--1rem);
+        }
+    }
+}

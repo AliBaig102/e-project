@@ -17,6 +17,7 @@
 --color-4: #161A30;
 --black: #000000;
 --white: #ffffff;
+--red: red;
 --black-shadow: rgba(0, 0, 0, 0.2);
 --03rem: clamp(2px,.3vw,.3rem);
 --05rem: clamp(3px,.5vw,.5rem);
@@ -24,6 +25,9 @@
 --15rem: clamp(13px,1.5vw,1.5rem);
 --2rem: clamp(18px,2vw,2rem);
 --25rem: clamp(13px,2.5vw,2.5rem);
+--3rem: clamp(23px,3vw,3rem);
+--300px: 300px;
+--60px: 60px;
 }
 img{
     width: 100%;
@@ -43,7 +47,7 @@ button{
 }
 header{
     background: var(--white);
-    height: 60px;
+    height: var(--60px);
     display: flex;
     align-items: center;
     padding: 0 var(--15rem);
@@ -53,7 +57,7 @@ header{
     box-shadow: 0 0 var(--1rem) var(--black-shadow);
 
     & .logo{
-        width: 300px;
+        width: var(--300px);
         display: flex;
         font-size: var(--15rem);
         align-items: center;

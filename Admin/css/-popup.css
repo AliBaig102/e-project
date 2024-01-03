@@ -1,0 +1,104 @@
+@import "global.css";
+
+.popup_container{
+    position: fixed;
+    width: calc(100% - var(--300px));
+    height: calc(100% - var(--60px));
+    display: grid;
+    place-items: center;
+    left: var(--300px);
+    top: -100vh;
+    transition: background-color 1s 1s,top 1s;
+    &.active{
+    top: var(--60px);
+        background: var(--black-shadow);
+    }
+    & .popup{
+        background-color: var(--white);
+        border-radius: var(--05rem);
+        padding: var(--1rem);
+        box-shadow: 0 0 var(--1rem) var(--black-shadow);
+        width: 50%;
+        & .popup_head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--1rem);
+            border-bottom: 1px solid var(--black-shadow);
+            & h1{
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: var(--color-4);
+                text-transform: capitalize;
+
+            }
+            & iconify-icon{
+                cursor: pointer;
+                color: var(--black-shadow);
+                font-size: 1.5rem;
+                &:hover{
+                    color: var(--red);
+                    transform: scale(1.1);
+                    transition: all .5s;
+
+                }
+            }
+        }
+        & .popup_body{
+            padding: var(--1rem);
+            & form{
+                display: flex;
+                flex-direction: column;
+                gap: var(--1rem);
+                & div{
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--1rem);
+                    & label{
+                        font-size: var(--1rem);
+                        color: var(--color-4);
+
+                    }
+                    & input{
+                        padding:  var(--1rem);
+                        border-radius: var(--05rem);
+                        box-shadow:  .5vw .5vw var(--1rem) #a9a7a7,
+                        inset -.5vw -.5vw var(--2rem) #e5e5e5;
+
+                    }
+                }
+            }
+            & button{
+                padding:  var(--1rem);
+                border-radius: var(--05rem);
+                background-color: var(--color-4);
+                color: var(--white);
+                font-size: var(--1rem);
+                width: fit-content;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: var(--1rem);
+                & iconify-icon{
+                    font-size: var(--15rem);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes showPopup {
+    from{
+        /*left: -1000px;*/
+        background-color: transparent;
+        /*transition: background-color 4s 5s;*/
+
+    }
+    to{
+        /*left: var(--300px);*/
+        /*transition: background-color 4s 5s;*/
+        background-color: var(--black-shadow);
+    }
+}

@@ -20,7 +20,7 @@ require "Layout/sidebar.php";
 <!--                <option selected disabled>All Orders</option>-->
 <!--                <option>Pending</option>-->
 <!--            </select>-->
-                        <button>
+                        <button id="popup_add">
                             <iconify-icon icon="ic:round-plus"></iconify-icon>
                             Add Category
                         </button>
@@ -52,7 +52,51 @@ require "Layout/sidebar.php";
         </div>
     </div>
 </div>
+<div class="popup_container">
+    <div class="popup">
+        <div class="popup_head">
+            <h1>Add Category</h1>
+            <iconify-icon icon="material-symbols:close"></iconify-icon>
+        </div>
+        <div class="popup_body">
+            <form>
+                <div>
+                    <label for="category_name">Category Name</label>
+                    <input type="text" id="category_name" placeholder="Enter Category Name">
+                </div>
+                <button>
+                    <iconify-icon icon="ic:round-add"></iconify-icon>
+                    Add Category
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    let popup = document.querySelector(".popup_container");
+    let popup_close = document.querySelector(".popup_container .popup .popup_head iconify-icon");
+    let popup_add = document.querySelector("#popup_add");
+    popup_add.addEventListener("click",()=>{
+        popup.style.background="var(--black-shadow)";
+        popup.classList.add("active")
+    });
+    popup.addEventListener("click",e=>{
+        if (e.target===e.currentTarget){
+            showPopup()
+        }
+    })
+    popup_close.addEventListener("click",()=>{
+        showPopup()
+    })
+function showPopup(){
+    popup.style.background="transparent";
+    setTimeout(()=>{
+        popup.classList.remove("active");
+    },1600)
+}
+
+</script>
 <?php
-$js_file="orders.js";
+$js_file="categories.js";
 require "Layout/footer.php"
 ?>

@@ -63,7 +63,7 @@ class crud
             }
         }
     }
-    public function select($table,$column,$join=null,$on=null,$where=null,$order=null,$limit=null,$limitNum){
+    public function select($table,$column,$join,$on=null,$where=null,$order=null,$limit=null,$limitNum){
         if ($this->tableExists($table)){
             $sql="SELECT $column FROM $table";
             if ($join!=null){

@@ -18,28 +18,28 @@ class crudClass{
         return result;
     }
     select=async (url,id)=>{
-        this.parameters.body=JSON.stringify({id});
-        let fetch= await fetch(url,this.parameters);
-        fetch=await fetch.json();
-        return fetch;
+        this.parameters.body=JSON.stringify(id);
+        let result= await fetch(this.url=url,this.parameters);
+        result=await result.json();
+        return result;
     }
     update=async (url,id,data)=>{
         this.parameters.body=JSON.stringify({id,data});
-        let fetch= await fetch(url,this.parameters);
-        fetch=await fetch.json();
-        return fetch;
+        let result= await fetch(this.url+url,this.parameters);
+        result=await result.json();
+        return result;
     }
     delete=async (url,id)=>{
-        this.parameters.body=JSON.stringify({id});
-        let fetch= await fetch(url,this.parameters);
-        fetch=await fetch.json();
-        return fetch;
+        this.parameters.body=JSON.stringify(id);
+        let result= await fetch(this.url+url,this.parameters);
+        result=await result.json();
+        return result;
     }
     insert=async (url,data)=>{
-        this.parameters.body=JSON.stringify({data});
-        let fetch= await fetch(url,this.parameters);
-        fetch=await fetch.json();
-        return fetch;
+        this.parameters.body=JSON.stringify(data);
+        let result= await fetch(this.url+url,this.parameters);
+        result=await result.text();
+        return result;
     }
 }
 const crud=new crudClass();

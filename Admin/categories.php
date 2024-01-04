@@ -36,22 +36,25 @@ require "Layout/sidebar.php";
             </div>
             <div class="tbody">
                 <?php
-                for ($i=0;$i<20;$i++){
-                    echo '<div class="tr">
-                                <div class="td"><input type="checkbox"></div>
-                                <div class="td">Mens</div>
-                                <div class="td">00</div>
-                                <div class="td action" >
-                                            <iconify-icon style="color: blue" class="action_icon" icon="tabler:edit"></iconify-icon>
-                                           <iconify-icon style="color: red" class="action_icon" icon="ic:baseline-delete"></iconify-icon>
-                                </div>
-                            </div>';
-                }
-                ?>
+//                for ($i=0;$i<20;$i++){
+//                    echo '<div class="tr">
+//                                <div class="td"><input type="checkbox"></div>
+//                                <div class="td">Mens</div>
+//                                <div class="td">00</div>
+//                                <div class="td action" >
+//                                            <iconify-icon style="color: blue" class="action_icon" icon="tabler:edit"></iconify-icon>
+//                                           <iconify-icon style="color: red" class="action_icon" icon="ic:baseline-delete"></iconify-icon>
+//                                </div>
+//                            </div>';
+//                }
+//                ?>
             </div>
         </div>
     </div>
+    <div class="pagination_container">
+    </div>    
 </div>
+
 <div class="popup_container">
     <div class="popup">
         <div class="popup_head">
@@ -64,7 +67,7 @@ require "Layout/sidebar.php";
                     <label for="category_name">Category Name</label>
                     <input type="text" id="category_name" placeholder="Enter Category Name">
                 </div>
-                <button>
+                <button id="add_category">
                     <iconify-icon icon="ic:round-add"></iconify-icon>
                     Add Category
                 </button>
@@ -72,28 +75,22 @@ require "Layout/sidebar.php";
         </div>
     </div>
 </div>
-<script>
-    let popup = document.querySelector(".popup_container");
-    let popup_close = document.querySelector(".popup_container .popup .popup_head iconify-icon");
-    let popup_add = document.querySelector("#popup_add");
+<script type="module">
+    import {hidePopup,showPopup} from "./js/_partials/popup.js";
+    const popup = document.querySelector(".popup_container");
+    const popup_close = document.querySelector(".popup_container .popup .popup_head iconify-icon");
+    const popup_add = document.querySelector("#popup_add");
     popup_add.addEventListener("click",()=>{
-        popup.style.background="var(--black-shadow)";
-        popup.classList.add("active")
+        showPopup(popup)
     });
     popup.addEventListener("click",e=>{
         if (e.target===e.currentTarget){
-            showPopup()
+            hidePopup(popup)
         }
     })
     popup_close.addEventListener("click",()=>{
-        showPopup()
-    })
-function showPopup(){
-    popup.style.background="transparent";
-    setTimeout(()=>{
-        popup.classList.remove("active");
-    },1600)
-}
+        hidePopup(popup)
+    });
 
 </script>
 <?php

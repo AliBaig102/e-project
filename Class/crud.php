@@ -290,13 +290,17 @@ class crud
                         $previous_id = $page_array[$count] - 1;
                         if($previous_id > 0)
                         {
-                            $previous_link = "<li class=\"advancePagination_li previousPagination_li \"><a class=\"advancePagination_anchor\" href='$url?page=$previous_id' data-pagination='$previous_id'>Previous</a></li>";
+                            $previous_link = "<li class=\"advancePagination_li previousPagination_li \"><a class=\"advancePagination_anchor\" href='#' data-pagination='$previous_id'>
+                                                <iconify-icon icon=\"iconamoon:arrow-left-2-bold\"></iconify-icon>
+                                                </a></li>";
                         }
                         else
                         {
                             $previous_link = '
                     <li class="advancePagination_li disabled previousPagination_li">
-                    <a class="advancePagination_anchor" href="#">Previous</a>
+                    <a class="advancePagination_anchor" href="#">
+                        <iconify-icon icon="iconamoon:arrow-left-2-bold"></iconify-icon>
+                    </a>
                       </li>
                       ';
                         }
@@ -305,7 +309,9 @@ class crud
                         {
                             $next_link = '
                           <li class="advancePagination_li disabled nextPagination_li">
-                            <a class="advancePagination_anchor" href="#">Next</a>
+                            <a class="advancePagination_anchor" href="#">
+                            <iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>
+                            </a>
                           </li>
                             ';
                         }

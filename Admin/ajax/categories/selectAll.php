@@ -9,6 +9,7 @@ $page=$data['page'];
 }
 $obj = new \crudClass\crud();
 $obj->select("categories","*",null,null,null,null,10,$page);
-print_r($obj->stored_data);
+$result=$obj->stored_data;
+echo json_encode($result);
 echo "%";
 $obj->advancePaginationJS("categories",null,null,null,10,$page);

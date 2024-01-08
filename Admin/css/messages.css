@@ -1,1 +1,70 @@
 @import "products.css";
+.messages_container{
+    margin-top: var(--2rem);
+    display: flex;
+    gap: var(--1rem);
+    flex-wrap: wrap;
+    & .products_list_container{
+        flex-basis: 400px;
+        flex-grow: 1;
+        height: 80vh;
+        background: var(--color-1);
+        border-radius: var(--05rem);
+        overflow-y: auto;
+        padding: var(--1rem);
+        & .product_list{
+            display: flex;
+            box-shadow: 0 0 var(--1rem) var(--black-shadow);
+            gap: var(--1rem);
+            align-items: center;
+            margin: var(--1rem) 0;
+            cursor: pointer;
+            background: var(--white);
+            padding: var(--05rem) var(--1rem);
+            border-radius: var(--05rem);
+            & > div:first-child{
+                width: 70px;
+                height: 70px;
+                border-radius: var(--3rem);
+                overflow: hidden;
+                box-shadow: 0 0 var(--05rem) var(--black-shadow);
+            }
+            & h3{
+                font-weight: 400;
+            }
+        }
+    }
+    & .message_box_container{
+        flex-basis: 60%;
+        border-radius: var(--05rem);
+        flex-grow: 1;
+        height: 80vh;
+        & .message_box{
+            position: relative;
+            background: var(--white);
+            height: 100%;
+            overflow-y: auto;
+            & .message_head{
+                position: sticky;
+                top: 0;
+                display: flex;
+                align-items: center;
+                gap: var(--1rem);
+                background: var(--white);
+                padding: var(--05rem) var(--1rem);
+                border-radius: var(--05rem);
+                box-shadow: 0 1rem var(--1rem) var(--black-shadow);
+                & img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: var(--3rem);
+                    box-shadow: 0 0 var(--1rem) var(--black-shadow);
+                }
+                & h1{
+                    font-size: var(--1rem);
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

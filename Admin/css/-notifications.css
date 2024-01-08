@@ -1,0 +1,113 @@
+@import "global.css";
+.notifications{
+    position: fixed;
+    top: 10%;
+    right: 2%;
+    z-index: 1000;
+    & li.toasts{
+        list-style: none;
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin: var(--1rem) 0;
+        box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+        padding: var(--1rem);
+        border-radius: var(--03rem);
+        justify-content: space-between;
+        overflow: hidden;
+        min-width: 20rem;
+        min-height: var(--3rem);
+        transition: .5s;
+        animation: showToasts 3s  forwards;
+        &.hide{
+            animation: hideToasts .5s  forwards;
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: .5s;
+            height: .2rem;
+            animation: errorProgress 5s linear forwards;
+        }
+        &.success{
+            background: linear-gradient(to right, var(--success) ,var(--white) 20%, var(--white));
+            &:before{
+                background: var(--success);
+            }
+            & div iconify-icon{
+                color: green;
+            }
+        }
+        &.errors{
+            background: linear-gradient(to right, var(--red) ,var(--white) 20%, var(--white));
+            &:before{
+                background: var(--red);
+            }
+            & div iconify-icon{
+                color: red;
+            }
+        }
+        & > div{
+            display: flex;
+            align-items: center;
+            gap: var(--2rem);
+            & h3{
+                font-size: var(--1rem);
+            }
+            & p{
+                font-size: var(--1rem);
+                color: var(--black);
+
+            }
+            & iconify-icon{
+                font-size: var(--2rem);
+            }
+        }
+        & button iconify-icon{
+            color: var(--black-shadow);
+            font-size: var(--15rem);
+            cursor: pointer;
+            &:hover{
+                color: var(--red);
+            }
+        }
+    }
+
+}
+@keyframes showToasts {
+    0%{
+        /*opacity: 0;*/
+        right: -50vw;
+    }
+    40%{
+        right: -10%;
+    }
+    80%{
+        right: 5%;
+    }
+    100%{
+        right: 0;
+    }
+}
+@keyframes hideToasts {
+    0%{
+        right: 0;
+    }
+    40%{
+        right: 5%;
+    }
+    80%{
+        right: -10%;
+    }
+    100%{
+        right: -50vw;
+    }
+}
+@keyframes errorProgress {
+    100%{
+        width: 0;
+    }
+}

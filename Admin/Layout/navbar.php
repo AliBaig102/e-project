@@ -20,7 +20,7 @@
 <body>
 <header>
     <div class="logo">
-        <span class="dflex"><iconify-icon icon="heroicons:bars-3-center-left-16-solid"></iconify-icon></span>
+        <span class="dflex"><iconify-icon class="side_bar_btn" icon="heroicons:bars-3-center-left-16-solid"></iconify-icon></span>
         <!-- <img src="" alt=""> -->
         <strong>LOGO</strong>
     </div>

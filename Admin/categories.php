@@ -14,7 +14,7 @@ require "Layout/sidebar.php";
             <!--            </div>-->
             <form>
                 <iconify-icon icon="ic:round-search"></iconify-icon>
-                <input type="text" placeholder="Search Orders...">
+                <input type="text" id="search_input" placeholder="Search Categories...">
             </form>
 <!--            <select>-->
 <!--                <option selected disabled>All Orders</option>-->
@@ -25,10 +25,17 @@ require "Layout/sidebar.php";
                             Add Category
                         </button>
         </div>
+        <div class="delete_container">
+            <span>4 Categories Selected </span>
+            <button class="delete_button">
+                <iconify-icon icon="ic:round-delete"></iconify-icon>
+                Delete
+            </button>
+        </div>
         <div class="table">
             <div class="thead">
                 <div class="tr">
-                    <div class="th"><input type="checkbox"></div>
+                    <div class="th"><input type="checkbox" id="check_all"></div>
                     <div class="th ">#Category Name</div>
                     <div class="th">#Number of Products</div>
                     <div class="th">#Action</div>
@@ -63,36 +70,47 @@ require "Layout/sidebar.php";
         </div>
         <div class="popup_body">
             <form>
-                <div>
+                <input type="hidden" id="category_id" hidden>
+                <div class="input-group">
                     <label for="category_name">Category Name</label>
                     <input type="text" id="category_name" placeholder="Enter Category Name">
                 </div>
-                <button id="add_category">
-                    <iconify-icon icon="ic:round-add"></iconify-icon>
-                    Add Category
-                </button>
+                <div class="button-group">
+                    <button id="add_category" data-button="add">
+                        <iconify-icon icon="ic:round-add"></iconify-icon>
+                        <span>Add Category</span>
+                    </button>
+                </div>
             </form>
         </div>
     </div>
+    <div class="popup_container delete_popup">
+    <div class="popup">
+        <div class="popup_head">
+            
+            <h1>Delete Category</h1>
+            <iconify-icon icon="material-symbols:close"></iconify-icon>
+        </div>
+        <div class="popup_body">
+            <iconify-icon icon="ic:outline-delete"></iconify-icon>
+            <h1>Are you sure ?</h1>
+            <h3> you would like to delete this category from the database? </h3>
+            <h3> This action cannot be restored.</h3>
+            <div class="button-group">
+                <button id="cancel-btn">
+                    <iconify-icon icon="material-symbols:close"></iconify-icon>
+                    <span>Cancel</span>
+                </button>
+                <button id="delete-btn">
+                    <iconify-icon icon="ic:round-delete"></iconify-icon>
+                    <span>Delete</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-<script type="module">
-    import {hidePopup,showPopup} from "./js/_partials/popup.js";
-    const popup = document.querySelector(".popup_container");
-    const popup_close = document.querySelector(".popup_container .popup .popup_head iconify-icon");
-    const popup_add = document.querySelector("#popup_add");
-    popup_add.addEventListener("click",()=>{
-        showPopup(popup)
-    });
-    popup.addEventListener("click",e=>{
-        if (e.target===e.currentTarget){
-            hidePopup(popup)
-        }
-    })
-    popup_close.addEventListener("click",()=>{
-        hidePopup(popup)
-    });
+</div>
 
-</script>
 <?php
 $js_file="categories.js";
 require "Layout/footer.php"

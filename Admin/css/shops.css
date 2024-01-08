@@ -1,0 +1,82 @@
+@import "products.css";
+.shops_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    justify-content: center;
+    gap: var(--1rem);
+    & .shop_card{
+        box-shadow: 0 0 var(--1rem) var(--black-shadow);
+        border-radius: var(--05rem);
+        padding: var(--05rem);
+        background: var(--white);
+        & .shop_img{
+            border-radius: var(--05rem);
+            & img{
+                box-shadow: 0 0 var(--1rem) var(--black-shadow);
+                border-radius: var(--05rem);
+                object-position: center;
+            }
+        }
+        & .shop_info{
+            position: relative;
+            padding: var(--05rem);
+            & .shop_avatar{
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 70px;
+                height: 70px;
+                border-radius: var(--60px);
+                & img{
+                    box-shadow: 0 0 var(--1rem) var(--black-shadow);
+                    border-radius: var(--60px);
+                }
+            }
+            & h1{
+                font-size: 1.5em;
+                font-weight: 500;
+                text-align: center;
+                margin-top: 40px;
+            }
+            & p{
+                font-size: 1em;
+                text-align: center;
+                margin: var(--05rem) 0;
+                -webkit-line-clamp: 2;
+            }
+            & div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: var(--1rem);
+                & button{
+                    font-size: var(--1rem);
+                    padding: var(--05rem);
+                    border-radius: var(--05rem);
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: var(--05rem);
+                    color: var(--black-shadow);
+                    & iconify-icon{
+                        color: var(--black-shadow);
+                        font-size: var(--1rem);
+                    }
+                    &.verified.active{
+                        color: var(--success);
+                        & iconify-icon{
+                            color: var(--success);
+                        }
+                    }
+                    &.unverified.active{
+                        color: var(--red);
+                        & iconify-icon{
+                            color: var(--red);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

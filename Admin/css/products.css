@@ -33,20 +33,23 @@
         & >form{
             display: flex;
             align-items: center;
-            flex-basis: 500px;
             gap: var(--05rem);
             border: 2px solid var(--white);
             border-radius: var(--05rem);
             padding: var(--05rem);
             font-size: var(--15rem);
+            @media screen and (min-width: 600px) {
+                flex-basis: 50%;
+            }
             & input{
                 flex-grow: 1;
+                font-size: var(--1rem);
             }
         }
         & > select{
             border-radius: var(--05rem);
-            border: 2px solid var(--white);
             background: var(--white);
+            font-size: var(--1rem);
             padding: var(--05rem) var(--1rem);
         }
         & > button{
@@ -79,7 +82,7 @@
     }
 .tbody{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
     gap: var(--1rem);
 
     & .tr{
@@ -87,29 +90,27 @@
         place-items: start;
         position: relative;
 
-        & >.td:first-child{
-            display: none;
-        }
+
         & .td img{
             width: 100%;
         }
         & .td#title{
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
         }
-        & .td:nth-child(5){
-            position: absolute;
-            top: 75%;
-            right: 10%;
-            
-        }
-        & .td:nth-child(6){
+        /*& .td:nth-child(5){*/
+        /*    position: absolute;*/
+        /*    right: 10%;*/
+        /*    bottom: 20%;*/
+        /*    */
+        /*}*/
+        & .td:is(:first-child,:nth-child(6),:nth-child(7)){
             display: none;
         }
-        & .td:nth-child(8){
-            position: absolute;
-            top: 81%;
-            right: 10%;
-        }
+        /*& .td:nth-child(8){*/
+        /*    position: absolute;*/
+        /*    right: 10%;*/
+        /*    bottom: 14%;*/
+        /*}*/
         & .td:nth-child(9){
             display: none;
         }

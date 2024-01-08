@@ -9,4 +9,5 @@ function showPopup(element){
     element.style.background="var(--black-shadow)";
     element.classList.add("active")
 }
+
 export {hidePopup,showPopup}

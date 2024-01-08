@@ -25,7 +25,7 @@ class crud
         if ($this->tableExists($table)){
             $table_column=implode(", ",array_keys($parameter));
             $table_values=implode("','",$parameter);
-            $sql="INSERT INTO $table($table_column)VALUES('$table_values')";
+            $sql="INSERT INTO $table($table_column)VALUES(\"$table_values\")";
             if ($this->conn->query($sql)){
                 $this->stored_data[] = $this->conn->insert_id;
             }else{
@@ -284,13 +284,13 @@ class crud
                     {
                         $page_link .= "
                                 <li class=\"advancePagination_li active\">
-                                  <a class=\"advancePagination_anchor\" href='#'>$page_array[$count]</a>
+                                  <a class=\"advancePagination_anchor\" >$page_array[$count]</a>
                                 </li>
                                 ";
                         $previous_id = $page_array[$count] - 1;
                         if($previous_id > 0)
                         {
-                            $previous_link = "<li class=\"advancePagination_li previousPagination_li \"><a class=\"advancePagination_anchor\" href='#' data-pagination='$previous_id'>
+                            $previous_link = "<li class=\"advancePagination_li previousPagination_li \"><a class=\"advancePagination_anchor\" data-pagination='$previous_id' onclick='pagination(this)'>
                                                 <iconify-icon icon=\"iconamoon:arrow-left-2-bold\"></iconify-icon>
                                                 </a></li>";
                         }
@@ -298,7 +298,7 @@ class crud
                         {
                             $previous_link = '
                     <li class="advancePagination_li disabled previousPagination_li">
-                    <a class="advancePagination_anchor" href="#">
+                    <a class="advancePagination_anchor">
                         <iconify-icon icon="iconamoon:arrow-left-2-bold"></iconify-icon>
                     </a>
                       </li>
@@ -309,7 +309,7 @@ class crud
                         {
                             $next_link = '
                           <li class="advancePagination_li disabled nextPagination_li">
-                            <a class="advancePagination_anchor" href="#">
+                            <a class="advancePagination_anchor" >
                             <iconify-icon icon="iconamoon:arrow-right-2-bold"></iconify-icon>
                             </a>
                           </li>
@@ -317,7 +317,7 @@ class crud
                         }
                         else
                         {
-                            $next_link = "<li class=\"advancePagination_li nextPagination_li\"><a class=\"advancePagination_anchor\" href='$url?page=$next_id' data-pagination='$next_id'>Next</a></li>";
+                            $next_link = "<li class=\"advancePagination_li nextPagination_li\"><a class=\"advancePagination_anchor\" data-pagination='$next_id' onclick='pagination(this)'> <iconify-icon icon='iconamoon:arrow-right-2-bold'></iconify-icon></a></li>";
                         }
                     }
                     else
@@ -326,7 +326,7 @@ class crud
                         {
                             $page_link .= '
                         <li class="advancePagination_li disabled">
-                          <a class="advancePagination_anchor" href="#">...</a>
+                          <a class="advancePagination_anchor" >...</a>
                       </li>
                       ';
                         }
@@ -334,7 +334,7 @@ class crud
                         {
 
                             $page_link .= "
-                          <li class='advancePagination_li'><a class=\"advancePagination_anchor\" href='$url?page=$page_array[$count]' data-pagination='$page_array[$count]'>$page_array[$count]</a></li>
+                          <li class='advancePagination_li'><a class=\"advancePagination_anchor\" data-pagination='$page_array[$count]' onclick='pagination(this)'>$page_array[$count]</a></li>
                           ";
                         }
                     }

@@ -6,6 +6,6 @@ if ($data["Category_Name"] !== null && $data["Category_Name"] !== "") {
 
     $obj = new \crudClass\crud();
     $obj->insert("categories", ["Category_Name" => $category_name]);
-    $result = $obj->stored_data;
+    $result = $obj->stored_data[0];
     echo json_encode($result);
 }

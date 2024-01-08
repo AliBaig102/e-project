@@ -13,3 +13,41 @@
         }
     }
 }
+.delete_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--1rem);
+    background: linear-gradient(to right,var(--white) 80%, #e63232);
+    border-radius: var(--05rem);
+    box-shadow: 0 0 var(--1rem) var(--black-shadow);
+    display: none;
+    &.active{
+        display: flex;
+    }
+    & span{
+        font-size: var(--1rem);
+        text-transform: uppercase;
+        text-shadow: 0 0 var(--1rem) var(--black-shadow);
+        letter-spacing: var(--05rem);
+        font-style: italic;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 100;
+
+    }
+    & button{
+        /*background: linear-gradient(to right,var(--red),var(--white));*/
+        border-radius: var(--05rem);
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        gap: var(--1rem);
+        padding: var(--05rem) var(--1rem);
+        cursor: pointer;
+
+        & iconify-icon{
+            color: var(--red);
+            font-size: var(--15rem);
+        }
+    }
+}

@@ -1,6 +1,6 @@
 @import "global.css";
 
-.popup_container{
+.popup_container,.delete_popup{
     position: fixed;
     width: calc(100% - var(--300px));
     height: calc(100% - var(--60px));
@@ -9,6 +9,10 @@
     left: var(--300px);
     top: -100vh;
     transition: background-color 1s 1s,top 1s;
+    @media (max-width: 766px) {
+        width: 100%;
+        left: 0;
+    }
     &.active{
     top: var(--60px);
         background: var(--black-shadow);
@@ -48,57 +52,147 @@
             padding: var(--1rem);
             & form{
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: var(--1rem);
-                & div{
+                & .input-group{
                     display: flex;
                     flex-direction: column;
+                    flex-basis: 100%;
                     gap: var(--1rem);
                     & label{
                         font-size: var(--1rem);
                         color: var(--color-4);
-
                     }
                     & input{
                         padding:  var(--1rem);
                         border-radius: var(--05rem);
                         box-shadow:  .5vw .5vw var(--1rem) #a9a7a7,
                         inset -.5vw -.5vw var(--2rem) #e5e5e5;
-
+                        
                     }
                 }
             }
-            & button{
-                padding:  var(--1rem);
-                border-radius: var(--05rem);
-                background-color: var(--color-4);
-                color: var(--white);
-                font-size: var(--1rem);
-                width: fit-content;
-                cursor: pointer;
+            & .button-group{
+                flex-basis: 100%;
                 display: flex;
-                align-items: center;
+                    /*flex-grow: 1;*/
                 gap: var(--1rem);
-                & iconify-icon{
-                    font-size: var(--15rem);
-                    color: var(--white);
+                justify-content: space-between;
+                & button{
+                    padding:  var(--1rem);
+                    border-radius: var(--05rem);
+                    background-color: var(--color-4);
+                    font-size: var(--1rem);
+                    cursor: pointer;
+                    display: flex;
+                    white-space: nowrap;
+                    gap: var(--1rem);
+                    &#cancel{
+                        display: none;
+                    }
+                    
+                    & iconify-icon{
+                        font-size: var(--15rem);
+                        color: var(--white);
+                    }
+                    & span{
+                        color: var(--white);
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}
+.delete_popup{
+    & .popup{
+    background: var(--color-1);
+        & .popup_body{
+            display: flex;
+            border-radius: var(--05rem);
+            flex-direction: column;
+            box-shadow: var(--1rem) var(--1rem) var(--1rem) var(--black-shadow);
+            position: relative;
+            margin-top: var(--3rem);
+            padding-top: var(--3rem);
+            background: var(--white);
+            & > iconify-icon{
+                font-size: clamp(2rem, 5vw, 5rem);
+                padding: var(--05rem);
+                color: var(--red);
+                position: absolute;
+                transform: translate(-50%,-50%);
+                top: -0%;
+                left: 50%;
+                border-radius: 50%;
+                margin-bottom: var(--1rem);
+                background: var(--color-1);
+            }
+            & h1{
+                text-align: center;
+                color: var(--color-4);
+                font-size: var(--2rem);
+            }
+            & h3{
+                text-align: center;
+                color: var(--color-4);
+                font-size: var(--1rem);
+                font-weight: 400;
+            }
+            & .button-group{
+                margin-top: var(--1rem);
+                flex-basis: 100%;
+                flex-wrap: wrap;
+                button{
+                    justify-content: center;
+                    flex-grow: 1;
+                    min-width: 100px;
+                    &#cancel-btn{
+                        /*box-shadow: 0 0 var(--1rem) var(--black-shadow);*/
+                        background: transparent;
+                        border: .2rem solid var(--color-1);
+                        & *{
+                            color: var(--color-4);
+                        }
+                        &:hover{
+                            background: var(--color-1);
+                            & *{
+                                color: var(--color-2);
+                            }
+                        }
+                    }
+                    &#delete-btn{
+                        /*background: var(--red);*/
+                        background: transparent;
+                        border: .1rem solid var(--red);
+                        & *{
+                            color: var(--red);
+                        }
+                        &:hover{
+                            background: var(--red);
+                            & *{
+                                color: var(--white);
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-
 }
 
-@keyframes showPopup {
-    from{
-        /*left: -1000px;*/
-        background-color: transparent;
-        /*transition: background-color 4s 5s;*/
+/*@keyframes showPopup {*/
+/*    from{*/
+/*        !*left: -1000px;*!*/
+/*        background-color: transparent;*/
+/*        !*transition: background-color 4s 5s;*!*/
 
-    }
-    to{
-        /*left: var(--300px);*/
-        /*transition: background-color 4s 5s;*/
-        background-color: var(--black-shadow);
-    }
-}
+/*    }*/
+/*    to{*/
+/*        !*left: var(--300px);*!*/
+/*        !*transition: background-color 4s 5s;*!*/
+/*        background-color: var(--black-shadow);*/
+/*    }*/
+/*}*/

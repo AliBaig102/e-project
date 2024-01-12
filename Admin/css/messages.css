@@ -3,18 +3,18 @@
     margin-top: var(--2rem);
     display: flex;
     gap: var(--1rem);
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     & .products_list_container{
-        flex-basis: 400px;
+        flex-basis: max(200px,20vw);
         flex-grow: 1;
         height: 80vh;
         background: var(--color-1);
         border-radius: var(--05rem);
         overflow-y: auto;
-        padding: var(--1rem);
+        padding: 0 var(--1rem);
         & .product_list{
             display: flex;
-            box-shadow: 0 0 var(--1rem) var(--black-shadow);
+            /*box-shadow: 0 0 var(--1rem) var(--black-shadow);*/
             gap: var(--1rem);
             align-items: center;
             margin: var(--1rem) 0;
@@ -23,8 +23,8 @@
             padding: var(--05rem) var(--1rem);
             border-radius: var(--05rem);
             & > div:first-child{
-                width: 70px;
-                height: 70px;
+                width: max(30px,var(--2rem));
+                height: max(30px,var(--2rem));
                 border-radius: var(--3rem);
                 overflow: hidden;
                 box-shadow: 0 0 var(--05rem) var(--black-shadow);
@@ -43,26 +43,124 @@
             position: relative;
             background: var(--white);
             height: 100%;
-            overflow-y: auto;
             & .message_head{
-                position: sticky;
-                top: 0;
+                height: 70px;
                 display: flex;
                 align-items: center;
                 gap: var(--1rem);
                 background: var(--white);
-                padding: var(--05rem) var(--1rem);
+                padding: 0 var(--1rem);
                 border-radius: var(--05rem);
-                box-shadow: 0 1rem var(--1rem) var(--black-shadow);
+                border-bottom: 2px solid var(--black-shadow);
                 & img{
-                    width: 50px;
-                    height: 50px;
+                    width: max(30px,var(--2rem));
+                    height: max(30px,var(--2rem));
                     border-radius: var(--3rem);
                     box-shadow: 0 0 var(--1rem) var(--black-shadow);
                 }
                 & h1{
                     font-size: var(--1rem);
                     font-weight: 400;
+                }
+            }
+            & .message_body{
+                padding: var(--1rem);
+                overflow-y: auto;
+                height: calc(100% - 70px);
+                & .userMessage{
+                    background: var(--color-1);
+                    max-width: 70%;
+                    position: relative;
+                    margin:  var(--1rem) 0;
+                    width: fit-content;
+                    padding: var(--1rem);
+                    border-radius: var(--1rem);
+                    & div{
+                        display: flex;
+                        gap: var(--1rem);
+                        align-items: center;
+                        margin-bottom: var(--05rem);
+                        & img{
+                            width:var(--2rem);
+                            height:var(--2rem);
+                            border-radius: var(--3rem);
+                            box-shadow: 0 0 var(--1rem) var(--black-shadow);
+
+                        }
+                        & h4{
+                            font-size: var(--1rem);
+                        }
+                    }
+                    & > p{
+                        font-size: var(--1rem);
+                        font-weight: 400;
+                        margin-bottom: var(--05rem);
+                    }
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -10px;
+                        width: 20px;
+                        height: 20px;
+                        background: var(--color-1);
+                        border-radius: 10px 0 0 5rem;
+                    }
+                    & span{
+                        display: block;
+                        margin-top: var(--05rem);
+                        display: none;
+                        & p{
+                            font-size: var(--1rem);
+                            font-weight: 400;
+                            max-width: 70%;
+                            margin-left: auto;
+                            text-align: right;
+                            background: var(--white);
+                            padding: var(--1rem);
+                            border-radius: var(--1rem);
+                        }
+                    }
+                    & hr{
+                        border: 1px solid var(--black-shadow);
+                        margin: 0 var(--2rem);
+                        opacity: 0.5;
+                    }
+                    & > button{
+                        margin-top: var(--05rem);
+                        font-size: var(--1rem);
+                        cursor: pointer;
+                    }
+                    & form{
+                        display: flex;
+                        background: var(--white);
+                        border-bottom: 1px solid var(--black-shadow);
+                        border-radius:  var(--05rem);
+                        padding: 0 var(--05rem);
+                        align-items: center;
+                        gap: var(--1rem);
+                        align-items: center;
+                        margin-top: var(--05rem);
+                        display: none;
+                        &.active{
+                            display: flex;
+                        }
+                        & input{
+                            flex: 1;
+                            padding:  var(--1rem);
+                        }
+                        & button{
+                            font-size: var(--1rem);
+                            cursor: pointer;
+                            & iconify-icon{
+                                color: var(--black-shadow);
+                                &:hover{
+                                    color: var(--color-4);
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

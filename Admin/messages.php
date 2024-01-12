@@ -9,9 +9,19 @@ require "Layout/sidebar.php";
         <h1>Messages List</h1>
         <div class="messages_container">
             <div class="products_list_container">
+                <?php
+                for ($j = 0; $j < 30; $j++) {
+                    echo '<div class="product_list">
+                    <div>
+                        <img src="images/logo.png" alt="">
+                    </div>
+                    <h3>Product Title</h3>
+                </div>';
+                }
+                ?>
                 <div class="product_list">
                     <div>
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img src="images/logo.png" alt="">
                     </div>
                     <h3>Product Title</h3>
                 </div>
@@ -19,19 +29,40 @@ require "Layout/sidebar.php";
             <div class="message_box_container">
                 <div class="message_box">
                     <div class="message_head">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img src="images/logo.png" alt="">
                         <h1>Product Title</h1>  
                     </div>
                     <div class="message_body">
-                        <div>
+                        <?php
+                        for ($i = 0; $i < 30; $i++) {
+                            echo ' <div class="userMessage">
                             <div>
-                                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                                <img src="images/logo.png" alt="">
                                 <h4>username</h4>
                             </div>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Doloremque, magni! 
                             </p>
-                        </div>
+                            <hr>
+                            <span>
+                               <p>
+                                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, asperiores debitis excepturi exercitationem nesciunt 
+                               </p>
+                            </span>
+                            <button>
+                                <iconify-icon icon="material-symbols:reply"></iconify-icon>
+                                Reply
+                            </button>
+                            <form action="">
+                                <input type="text" placeholder="Write Message">
+                                <button>
+                                    <iconify-icon icon="material-symbols:send"></iconify-icon>
+                                </button>
+                            </form>
+                        </div>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -92,6 +123,6 @@ require "Layout/sidebar.php";
 </div>
 
 <?php
-$js_file="shops.js";
+$js_file="messages.js";
 require "Layout/footer.php"
 ?>

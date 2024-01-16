@@ -15,7 +15,7 @@
     }
     &.active{
     top: var(--60px);
-        background: var(--black-shadow);
+        background: rgba(0, 0, 0, 0.29);
     }
     & .popup{
         background-color: var(--white);
@@ -67,8 +67,8 @@
                     & input{
                         padding:  var(--1rem);
                         border-radius: var(--05rem);
-                        box-shadow:  .5vw .5vw var(--1rem) #a9a7a7,
-                        inset -.5vw -.5vw var(--2rem) #e5e5e5;
+                        border: 2px solid var(--color-1);
+                        font-size: var(--1rem);
                         
                     }
                 }

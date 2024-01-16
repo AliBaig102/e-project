@@ -84,6 +84,7 @@ require "Layout/sidebar.php";
             </form>
         </div>
     </div>
+</div>
     <div class="popup_container delete_popup">
     <div class="popup">
         <div class="popup_head">
@@ -108,7 +109,6 @@ require "Layout/sidebar.php";
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <?php

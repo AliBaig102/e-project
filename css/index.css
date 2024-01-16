@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(../Admin/css/global.css);
+/**,*/
+/*::before,*/
+/*::after {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    box-sizing: border-box;*/
+/*    list-style: none;*/
+/*    font-family: 'Poppins', sans-serif;*/
+/*    color: var(--color-4);*/
+/*    text-decoration: none;*/
+/*    outline: none;*/
+/*    line-height: 1;*/
+
+/*}*/
+/*:root{*/
+/*    --color-1: #F9EFDB;*/
+/*    --color-2: #B2A59B;*/
+/*    --color-3: #B99470;*/
+/*    --color-4: #161A30;*/
+/*    --black: #000000;*/
+/*    --white: #ffffff;*/
+/*    --red: #e82020;*/
+/*    --success: rgb(12, 183, 12);*/
+/*    --black-shadow: rgba(0, 0, 0, 0.29);*/
+/*    --03rem: clamp(.2rem,.3vw,.5rem);*/
+/*    --05rem: clamp(.3rem,.5vw,.8rem);*/
+/*    --1rem: clamp(.8rem,1vw,1.3rem);*/
+/*    --15rem: clamp(1rem,1.5vw,1.8rem);*/
+/*    --2rem: clamp(1.5rem,2vw,2.5rem);*/
+/*    --25rem: clamp(2rem,2.5vw,3rem);*/
+/*    --3rem: clamp(4.5rem,3vw,3.5rem);*/
+/*    --300px: clamp(200px,16vw,20rem);*/
+/*    --60px: 60px;*/
+/*    scrollbar-color: var(--color-1) var(--white) !important;*/
+/*    scrollbar-width: thin !important;*/
+/*}*/
+/*body{*/
+/*    overflow-x: hidden;*/
+/*    &.dark{*/
+/*        !*--white: #191919;*!*/
+/*        --white: #1A120B;*/
+/*        --color-4: white;*/
+/*        --color-1: #3C2A21;*/
+/*        --black-shadow: rgba(255, 255, 255, 0.18);*/
+/*    }*/
+/*}*/
+/*img{*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*    user-select: none;*/
+/*}*/
+/*input[type="text"],*/
+/*select,*/
+/*textarea,*/
+/*button{*/
+/*    -webkit-appearance: none;*/
+/*    appearance: none;*/
+/*    outline: none;*/
+/*    border: none;*/
+/*    background: transparent;*/
+/*}*/
+/*form error{*/
+/*    color: red;*/
+/*    font-size: var(--1rem);*/
+/*}*/
+/*::-webkit-scrollbar{*/
+/*    width: .5rem;*/
+/*    background: var(--white);*/
+/*}*/
+/*::-webkit-scrollbar-thumb {*/
+/*    background: var(--color-1);*/
+/*}*/
+nav{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--2rem);
+    height: var(--60px);
+    background: var(--color-1);
+    box-shadow: 0 0 1vw var(--black-shadow);
+    gap: var(--05rem);
+
+    .logo{
+        font-size: var(--2rem);
+    }
+    form{
+        display: flex;
+        align-items: center;
+        gap: var(--1rem);
+        padding: var(--05rem);
+        width: max(200px,50vw);
+        border: 1px solid var(--color-3);
+        border-radius: var(--05rem);
+        & input{
+            flex-grow: 1;
+            border-radius: var(--05rem);
+            font-size: var(--1rem);
+        }
+        & .nav_search_times{
+            font-size: var(--15rem);
+            cursor: pointer;
+            color: var(--color-3);
+            display: none;
+        }
+        & button iconify-icon{
+            font-size: var(--15rem);
+            cursor: pointer;
+            color: var(--color-3);
+            transition: all .5s ease-in-out;
+            &:hover{
+              transform: translateX(20%);
+            }
+        }
+    }
+    & >ul {
+        display: flex;
+        align-items: center;
+        gap: var(--1rem);
+        & li{
+            cursor: pointer;
+            position: relative;
+            color: var(--color-3);
+            /*transition: all.5s ease-in-out;*/
+            display: flex;
+            align-items: center;
+            gap: var(--05rem);
+            & iconify-icon{
+                font-size: var(--15rem);
+                cursor: pointer;
+                color: var(--color-3);
+                transition: all .5s ease-in-out;
+                display: flex;
+                align-items: center;
+                gap: var(--05rem);
+                &[data-cart-count] {
+                    font-size: var(--2rem);
+                    &::after {
+                    content: attr(data-cart-count);
+                    background: var(--color-3);
+                    color: var(--white);
+                    font-size: var(--1rem);
+                    padding: 0 5%;
+                    border-radius: 20%;
+                    }
+                }
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+            &.login{
+                background: var(--white);
+                padding: var(--05rem) var(--05rem);
+                border-radius: var(--03rem);
+                & span{
+                    /*font-weight: bold;*/
+                    color: var(--color-3);
+                }
+            }
+            &.signup{
+                padding: var(--05rem) var(--05rem);
+                border-radius: var(--03rem);
+                border: 1px solid var(--color-3);
+                &:hover{
+                    background: var(--color-3);
+                    & *{
+                        color: var(--white);
+                    }
+                }
+                & span{
+                    /*font-weight: bold;*/
+                    color: var(--color-3);
+                }
+            }
+            & ul{
+                position: absolute;
+                min-width: 200px;
+                width: max(150px,20vw);
+                padding: var(--05rem);
+                box-shadow: 0 0 1vw var(--black-shadow);
+                background: var(--white);
+                border-radius: var(--05rem);
+                /*display: none;*/
+                top: 200%;
+                right: 0;
+                transform: translateX(6%);
+                z-index: 2;
+                &.active{
+                display: block;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: -3%;
+                    transform: translateX(-50%);
+                    right: 0;
+                    width: 0;
+                    height: 0;
+                    border-left: var(--1rem) solid transparent;
+                    border-right: var(--1rem) solid transparent;
+                    border-bottom: var(--1rem) solid var(--white);
+                }
+                & li.navbar-user-info{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: var(--1rem);
+                    padding: var(--05rem);
+                    margin-bottom: var(--15rem);
+                    & img{
+                        width: var(--3rem);
+                        aspect-ratio: 1/1;
+                        border-radius: var(--05rem);
+                    }
+                    & h2{
+                        font-size: var(--15rem);
+                        font-weight: 500;
+                    }
+                    & span{
+                        font-size: var(--1rem);
+                        font-weight: 500;
+                    }
+                }
+                & li:not(.navbar-user-info){
+                    font-size: var(--1rem);
+                    display: flex;
+                    align-items: center;
+                    margin: var(--05rem) 0;
+                    cursor: pointer;
+                    padding: var(--1rem);
+                    border-radius: var(--05rem);
+                    gap: var(--1rem);
+                    background: var(--color-1);
+                }
+                & li.logout *{
+                    color: var(--red);
+                }
+            }
+        }
+    }
+}
+.popup_container{
+    width: 100%;
+    left: 0;
+    height: 100vh;
+    &.active{
+        top: 0;
+    }
+    & .popup{
+        width: 100%;
+        max-width: 500px;
+        & .popup_body form .input-group{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 var(--05rem);
+            border-radius:var(--05rem);
+            border: 1px solid var(--color-3);
+            & iconify-icon{
+                color: var(--color-3);
+            }
+            & .show-password{
+                cursor: pointer;
+            }
+            & input{
+                flex-grow: 1;
+                border: none;
+                padding: var(--1rem) 0;
+            }
+        }
+        & .popup_body form .button-group{
+            justify-content: center;
+            & button{
+                flex-basis: 30%;
+                background: var(--color-3);
+                justify-content: center;
+            }
+        }
+    }
+}

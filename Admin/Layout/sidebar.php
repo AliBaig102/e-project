@@ -1,11 +1,11 @@
 <section class="side_bar">
-    <ul class="side_bar_shop_profile">
-        <li>
+<!--    <ul class="side_bar_shop_profile">-->
+<!--        <li>-->
             <!-- Shop Avtar -->
-            <img src="images/logo.png" alt="">
-        </li>
-        <li>Shop Name</li>
-    </ul>
+<!--            <img src="images/logo.png" alt="">-->
+<!--        </li>-->
+<!--        <li>Shop Name</li>-->
+<!--    </ul>-->
 
     <nav class="side_bar_navigation">
         <a href="dasboard.php" class="<?php if ($title=="Dashboard") echo "active"?>">
@@ -24,13 +24,17 @@
             <iconify-icon icon="ic:outline-message"></iconify-icon>
             <span>Messages</span>
         </a>
+        <a href="reviews.php" class="<?php if ($title=="Reviews") echo "active"?>">
+            <iconify-icon icon="material-symbols:reviews-outline"></iconify-icon>
+            <span>Reviews</span>
+        </a>
         <a href="categories.php" class="<?php if ($title=="Categories") echo "active"?>">
             <iconify-icon icon="ic:outline-category"></iconify-icon>
             <span>Categories</span>
         </a>
-        <a href="shops.php" class="<?php if ($title=="Shops") echo "active"?>">
-            <iconify-icon icon="mingcute:shop-line"></iconify-icon>
-            <span>Shops</span>
-        </a>
+<!--        <a href="shops.php" class="--><?php //if ($title=="Shops") echo "active"?><!--">-->
+<!--            <iconify-icon icon="mingcute:shop-line"></iconify-icon>-->
+<!--            <span>Shops</span>-->
+<!--        </a>-->
     </nav>
 </section>

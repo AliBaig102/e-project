@@ -40,6 +40,16 @@ function notifications(message,type="success"){
             </div>
         </div>
         <button onclick="closeNotification(this)"><iconify-icon icon="material-symbols:close"></iconify-icon></button>`;
+    }else if(type=="info"){
+        toast.className="toasts info";
+        toast.innerHTML=`<div>
+            <iconify-icon icon="material-symbols-light:info"></iconify-icon>
+            <div>
+                <h3>Info</h3>
+                <p>${message}</p>
+            </div>
+        </div>
+        <button onclick="closeNotification(this)"><iconify-icon icon="material-symbols:close"></iconify-icon></button>`;
     }
     notification.append(toast);
     setTimeout(()=>{

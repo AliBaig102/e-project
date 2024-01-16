@@ -82,7 +82,7 @@
     }
 .tbody{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     gap: var(--1rem);
 
     & .tr{
@@ -93,6 +93,7 @@
 
         & .td img{
             width: 100%;
+            aspect-ratio: 1/1;
         }
         & .td#title{
             -webkit-line-clamp: 2;

@@ -1,12 +1,12 @@
 <?php
-$title="Messages";
+$title="Reviews";
 $css_file="messages.css";
 require "Layout/navbar.php";
 require "Layout/sidebar.php";
 ?>
 <div class="content_area">
     <div class="products_container">
-        <h1>Messages List</h1>
+        <h1> List of Reviews</h1>
         <div class="messages_container">
             <div class="products_list_container">
                 <?php
@@ -16,8 +16,7 @@ require "Layout/sidebar.php";
                         <img src="images/logo.png" alt="">
                     </div>
                     <h3>Product Title</h3>
-                    <span class="message"><iconify-icon icon="lets-icons:message-fill"></iconify-icon>2</span>
-                    
+                    <span class="review"><iconify-icon icon="ic:baseline-star"></iconify-icon>2.5</span>
                 </div>';
                 }
                 ?>
@@ -32,7 +31,7 @@ require "Layout/sidebar.php";
                 <div class="message_box">
                     <div class="message_head">
                         <img src="images/logo.png" alt="">
-                        <h1>Product Title</h1>  
+                        <h1>Product Title</h1>
                     </div>
                     <div class="message_body">
                         <?php
@@ -46,6 +45,13 @@ require "Layout/sidebar.php";
                                 <iconify-icon icon="mingcute:close-fill"></iconify-icon>                                
                                 </b>
                             </div>
+                            <abbr>
+                            <iconify-icon class="active" icon="ic:baseline-star"></iconify-icon>
+                            <iconify-icon class="active" icon="ic:baseline-star"></iconify-icon>
+                            <iconify-icon icon="ic:baseline-star"></iconify-icon>
+                            <iconify-icon icon="ic:baseline-star"></iconify-icon>
+                            <iconify-icon icon="ic:baseline-star"></iconify-icon>
+                            </abbr>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                 Doloremque, magni! 

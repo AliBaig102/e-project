@@ -6,7 +6,7 @@ function hidePopup(element){
     },1600)
 }
 function showPopup(element){
-    element.style.background="var(--black-shadow)";
+    element.style.background="rgba(0, 0, 0, 0.29)";
     element.classList.add("active")
 }
 

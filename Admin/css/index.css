@@ -1,0 +1,92 @@
+@import url(global.css);
+.container{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-1);
+    & form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        padding: var(--1rem);
+        border-radius: var(--1rem);
+        background: var(--white);
+        box-shadow: 0 0 var(--1rem) var(--black-shadow);
+        & img{
+            width: max(70px, 10vw);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+        & div{
+            display: flex;
+            align-items: center;
+            gap: var(--1rem);
+            border: 2px solid var(--color-1);
+            margin: var(--1rem) 0;
+            padding: var(--1rem);
+            border-radius: var(--1rem);
+            width: 100%;
+            & input{
+                flex-grow: 1;
+                border: none;
+                outline: none;
+                background: transparent;
+                font-size: var(--1rem);
+            }
+            & .showPassword{
+                cursor: pointer;
+            }
+        }
+        & a{
+            font-size: var(--1rem);
+        }
+        & button{
+            width: 100%;
+            margin-top: var(--1rem);
+            padding: var(--1rem);
+            border-radius: var(--1rem);
+            background: var(--color-1);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--05rem);
+            font-size: var(--1rem);
+            cursor: pointer;
+            transition: .3s;
+            &:hover{
+                background: var(--color-2);
+            }
+        }
+
+    }
+}
+.popup_container{
+    width: 100%;
+    left: 0;
+    height: 100vh;
+    &.active{
+        top: 0;
+    }
+    & .popup{
+        width: 100%;
+        max-width: 500px;
+        & .popup_body form .input-group{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 var(--05rem);
+            border-radius:var(--05rem);
+            border: 2px solid var(--color-1);
+            & input{
+                flex-grow: 1;
+                border: none;
+                padding: var(--1rem) 0;
+            }
+        }
+    }
+}

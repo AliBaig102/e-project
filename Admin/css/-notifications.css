@@ -50,17 +50,26 @@
                 color: red;
             }
         }
+        &.info{
+            background: linear-gradient(to right, #0c98ca,var(--white) 20%, var(--white));
+            &:before{
+                background: rgba(45, 175, 222, 0.82);
+            }
+            & div iconify-icon{
+                color: #21a7fa;
+            }
+        }
         & > div{
             display: flex;
             align-items: center;
             gap: var(--2rem);
             & h3{
                 font-size: var(--1rem);
+                color: var(--color-4);
             }
             & p{
                 font-size: var(--1rem);
-                color: var(--black);
-
+                color: var(--color-4);
             }
             & iconify-icon{
                 font-size: var(--2rem);

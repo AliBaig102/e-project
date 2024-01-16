@@ -14,23 +14,48 @@
         padding: 0 var(--1rem);
         & .product_list{
             display: flex;
-            /*box-shadow: 0 0 var(--1rem) var(--black-shadow);*/
             gap: var(--1rem);
             align-items: center;
             margin: var(--1rem) 0;
             cursor: pointer;
             background: var(--white);
             padding: var(--05rem) var(--1rem);
+            position: relative;
             border-radius: var(--05rem);
             & > div:first-child{
-                width: max(30px,var(--2rem));
-                height: max(30px,var(--2rem));
+                width: max(30px,var(--25rem));
+                aspect-ratio: 1;
                 border-radius: var(--3rem);
                 overflow: hidden;
                 box-shadow: 0 0 var(--05rem) var(--black-shadow);
             }
             & h3{
                 font-weight: 400;
+                font-size: var(--1rem);
+            }
+            & span{
+                font-weight: 400;
+                font-size: var(--1rem);
+                display: flex;
+                align-items: center;
+                gap: var(--05rem);
+                position: absolute;
+                top: 50%;
+                right: 5%;
+                transform: translateY(-50%);
+                &.review {
+                color: chocolate;
+                    & iconify-icon {
+                    color: chocolate;
+                    }
+                }
+                &.message {
+                color: var(--success);
+                    & iconify-icon {
+                    color: var(--success);
+                    }
+                }
+
             }
         }
     }
@@ -79,6 +104,7 @@
                         display: flex;
                         gap: var(--1rem);
                         align-items: center;
+                        position: relative;
                         margin-bottom: var(--05rem);
                         & img{
                             width:var(--2rem);
@@ -89,6 +115,33 @@
                         }
                         & h4{
                             font-size: var(--1rem);
+                        }
+                        & i{
+                            font-size: var(--1rem);
+                        }
+                        & b{
+                            font-size: var(--1rem);
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            cursor: pointer;
+                            & iconify-icon{
+                                color: var(--black-shadow);
+                                &:hover{
+                                    color: var(--red);
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
+                    & abbr{
+                        margin: var(--05rem) 0;
+                        & iconify-icon{
+                            color: var(--black-shadow);
+                            &.active{
+                                color: chocolate;
+                                transform: scale(1.2);
+                            }
                         }
                     }
                     & > p{

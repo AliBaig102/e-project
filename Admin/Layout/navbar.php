@@ -34,9 +34,28 @@
                 <button class="dflex"><iconify-icon icon="mingcute:arrow-right-fill"></iconify-icon></button>
             </form>
         </li>
-        <li class="nav_setting dflex" title="Setting"><iconify-icon icon="lets-icons:setting-alt-line"></iconify-icon></li>
+<!--        <li class="nav_setting dflex" title="Setting"><iconify-icon icon="lets-icons:setting-alt-line"></iconify-icon></li>-->
         <li class="nav_user nav_setting">
             <img src="images/logo.png" alt="">
+            <ul>
+                <li>
+                    <img src="images/logo.png" alt="">
+                    <span>baiga2424@gmail.com</span>
+                </li>
+                <li class="theme-btn">
+                    <iconify-icon icon="akar-icons:moon"></iconify-icon>
+                    <span>Dark Mode</span>
+
+                </li>
+                <li class="theme-btn">
+                    <iconify-icon icon="akar-icons:sun"></iconify-icon>
+                    <span>Light Mode</span>
+                </li>
+                <li class="logout">
+                    <iconify-icon icon="ic:outline-logout"></iconify-icon>
+                    <span>Logout</span>
+                </li>
+            </ul>
         </li>
     </ul>
 </header>

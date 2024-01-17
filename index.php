@@ -94,9 +94,9 @@
                 <iconify-icon icon="material-symbols:close"></iconify-icon>
             </div>
             <div class="popup_body">
-                <form>
-                    <label for="signup-file-input">
-                        <img src="" alt="">
+                <form >
+                    <label for="signup-file-input" id="signup-file-input-label">
+                        <img src="images/upload-image.jpg" alt="">
                     </label>
                     <input type="file" id="signup-file-input" hidden>
                     <div class="input-group">
@@ -118,7 +118,7 @@
                         <iconify-icon icon="iconoir:eye" class="show-password show-password-signup-icon"></iconify-icon>
                     </div>
                     <div class="button-group">
-                        <button>
+                        <button id="signup-popup-submit">
                             <iconify-icon icon="material-symbols:login"></iconify-icon>
                             <span>sign in</span>
                         </button>
@@ -131,52 +131,6 @@
 </body>
 </html>
 <script src="Admin/js/_partials/theme.js"></script>
-<script type="module">
-    import {showPopup,hidePopup} from "./Admin/js/_partials/popup.js";
-    import togglePassword from "./Admin/js/_partials/togglePassword.js";
-    togglePassword(document.querySelector(".show-password-login-icon"));
-    document.querySelectorAll(".show-password-signup-icon").forEach(icon=>{
-        togglePassword(icon);
-    })
-    const navbarSearchInput = document.querySelector('#navbar-search-input');
-    const navbarSearchInputClear = document.querySelector('.nav_search_times');
-    navbarSearchInput.addEventListener('input', e=>{
-        if (e.target.value.length > 0){
-            navbarSearchInputClear.style.display = 'block';
-        }else {
-            navbarSearchInputClear.style.display = 'none';
-        }
-    })
-    navbarSearchInputClear.addEventListener('click', e=>{
-        navbarSearchInput.value = '';
-        navbarSearchInputClear.style.display = 'none';
-    })
-    const loginPopup = document.querySelector('.popup_container.loginPopup');
-    const loginPopupClose = document.querySelector('.popup_container.loginPopup .popup_head > iconify-icon');
-    const  loginButton=document.querySelector(".login");
-    const signupPopup = document.querySelector('.popup_container.signupPopup');
-    const signupPopupClose = document.querySelector('.popup_container.signupPopup .popup_head > iconify-icon');
-    const signupButton=document.querySelector(".signup");
-    const popupContainer=document.querySelectorAll(".popup_container");
-    popupContainer.forEach(container=>{
-        container.addEventListener('click', e=>{
-            if (e.target.classList.contains('popup_container')){
-                hidePopup(container);
-            }
-        })
-    })
-    loginButton.addEventListener('click', e=>{
-        showPopup(loginPopup);
-    })
-    signupButton.addEventListener('click', e=>{
-        showPopup(signupPopup);
-    })
-    loginPopupClose.addEventListener('click', e=>{
-        hidePopup(loginPopup);
-    })
-    signupPopupClose.addEventListener('click', e=>{
-        hidePopup(signupPopup);
-    })
-</script>
+<script src="js/index.js" type="module"></script>
 <?php
 require_once "Admin/_partials/iconfiy-icon.php";

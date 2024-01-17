@@ -1,19 +1,15 @@
-let isAdd=true;
-function inputError(element,errorMessage,isShow=true,time=500) {
-    let tag = "<error>"
-
-    if (isAdd) {
+function inputError(element,errorMessage,time=5000) {
+    let tag = "<error class='error'>"
+    let isErrorExist = element.nextElementSibling.classList.contains("error");
+    if (!isErrorExist) {
         tag+=errorMessage + "</error>";
         element.insertAdjacentHTML("afterend", tag);
-        isAdd = false;
     }else {
-        if (document.querySelector("error")){
-            document.querySelector("error").textContent=errorMessage;
-        }
+        element.nextElementSibling.innerHTML=errorMessage;
     }
     setTimeout(()=>{
-        if (document.querySelector("error")){
-            document.querySelector("error").textContent="";
+        if (isErrorExist) {
+            element.nextElementSibling.remove();
         }
     },time);
 }

@@ -62,9 +62,9 @@ addCategory.addEventListener("click",async (e)=>{
     const category_name=document.querySelector("#category_name");
     if(isAddButton==="Add"){
         if (category_name.value===""){
-            inputError(category_name,"Category Name Required",true,2000);
+            inputError(category_name,category_name,"Category Name Required",true,2000);
         }else if (category_name.value.length < 3){
-            inputError(category_name,"Category Name must be at least 3 characters",true,2000);
+            inputError(category_name,category_name,"Category Name must be at least 3 characters",true,2000);
         }else {
             let data=await crud.insert("categories/insert.php",{Category_Name:category_name.value});
             if (data){
@@ -78,9 +78,9 @@ addCategory.addEventListener("click",async (e)=>{
     }else if(isAddButton=="Edit"){
         const id=document.querySelector(".popup_container #category_id");
         if (category_name.value===""){
-            inputError(category_name,"Category Name Required",true,2000);
+            inputError(category_name,category_name,"Category Name Required",true,2000);
         }else if (category_name.value.length < 3){
-            inputError(category_name,"Category Name must be at least 3 characters",true,2000);
+            inputError(category_name,category_name,"Category Name must be at least 3 characters",true,2000);
         }else {
             let data=await crud.update("categories/update.php",id.value,{Category_Name:category_name.value});
             if (data){
